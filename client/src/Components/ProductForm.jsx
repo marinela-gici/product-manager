@@ -3,7 +3,7 @@ import axios from "axios";
 
 const ProductForm = () => {
   const [title, setTitle] = useState("");
-  const [age, setAge] = useState();
+  const [price, setPrice] = useState();
   const [description, setDescription] = useState("");
 
   const onSubmitHandler = (e) => {
@@ -12,7 +12,7 @@ const ProductForm = () => {
     axios
       .post("http://localhost:8000/api/products", {
         title,
-        age,
+        price,
         description,
       })
       .then((res) => {
@@ -32,7 +32,7 @@ const ProductForm = () => {
       <p>
         <label>Age</label>
         <br />
-        <input type="number" onChange={(e) => setAge(e.target.value)} />
+        <input type="number" onChange={(e) => setPrice(e.target.value)} />
       </p>
       <p>
         <label>Description</label>
